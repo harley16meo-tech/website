@@ -1,0 +1,701 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sunset Jr. Burgers & Cheesesteaks in San Angelo, Texas. Burgers, cheesesteaks, fries, sliders and more.">
+<title>Sunset Jr. | Burgers & Cheesesteaks</title>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --dark: #101827;
+  --orange: #e53945;
+  --gold: #3985f5;
+  --cream: #f7f9fd;
+  --muted: #b8c3d3;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.top {
+  background: var(--orange);
+  color: white;
+  text-align: center;
+  padding: 9px;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .14em;
+}
+
+header {
+  background: var(--dark);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 14px 5%;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: Oswald, sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.brand-logo {
+  display: block;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand small {
+  display: block;
+  font: 600 .64rem 'DM Sans', sans-serif;
+  letter-spacing: .16em;
+  color: #c4d1e5;
+  margin-top: 3px;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: .9rem;
+}
+
+.navlinks a:hover { color: var(--gold); }
+
+.btn {
+  display: inline-block;
+  padding: 13px 19px;
+  background: var(--orange);
+  border-radius: 4px;
+  color: white;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn.ghost {
+  border: 1px solid #ffffff80;
+  background: transparent;
+  color: #fff;
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(10,20,38,.96), rgba(10,20,38,.78) 44%, rgba(10,20,38,.15)),
+    url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=2000&q=85')
+    center/cover;
+}
+
+.hero-inner {
+  width: min(1200px, 90%);
+  margin: auto;
+  padding: 85px 0;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow { color: #75aaff; }
+
+h1, h2, h3 {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3.6rem, 8vw, 7rem);
+  margin: 18px 0;
+  max-width: 760px;
+}
+
+h1 span { color: var(--orange); }
+
+.hero p {
+  max-width: 530px;
+  line-height: 1.8;
+  color: #e1e8f2;
+  font-size: 1.08rem;
+  margin: 0 0 28px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.proof {
+  background: #19263b;
+  color: white;
+  padding: 23px 5%;
+}
+
+.proof-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.proof strong {
+  display: block;
+  font: 600 1.35rem Oswald;
+  color: #75aaff;
+}
+
+.proof span {
+  font-size: .8rem;
+  color: #d4deed;
+}
+
+section { padding: 82px 5%; }
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 34px;
+}
+
+.head h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-top: 12px;
+}
+
+.head p {
+  max-width: 430px;
+  color: #657087;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dce4f0;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px #1018270b;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  transition: transform .35s;
+}
+
+.card:hover img { transform: scale(1.035); }
+
+.card-body { padding: 21px; }
+
+.tag {
+  display: inline-block;
+  background: #e8f0ff;
+  color: #205bb9;
+  padding: 6px 9px;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #657087;
+  font-size: .93rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.note {
+  font-size: .85rem;
+  color: #657087;
+  margin-top: 24px;
+}
+
+.story {
+  background: #111b2d;
+  color: #fff;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.story img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.story h2 {
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
+  margin: 14px 0 20px;
+}
+
+.story p {
+  color: #d0dced;
+  line-height: 1.8;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review {
+  background: white;
+  border: 1px solid #dce4f0;
+  border-radius: 7px;
+  padding: 26px;
+}
+
+.stars {
+  color: var(--orange);
+  letter-spacing: .12em;
+  margin-bottom: 12px;
+}
+
+.review p {
+  line-height: 1.7;
+  color: #45516a;
+}
+
+.review small {
+  display: block;
+  color: #78849a;
+  margin-top: 5px;
+}
+
+.visit { background: #eaf1fc; }
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+}
+
+.visit h2 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin: 12px 0 20px;
+}
+
+.visit p {
+  line-height: 1.8;
+  color: #4f5c73;
+}
+
+.line {
+  padding: 15px 0;
+  border-bottom: 1px solid #ccd8e9;
+  display: flex;
+  gap: 16px;
+  line-height: 1.6;
+}
+
+.line strong { min-width: 100px; }
+
+.map {
+  width: 100%;
+  height: 370px;
+  border: 0;
+  border-radius: 7px;
+}
+
+footer {
+  background: var(--dark);
+  color: #fff;
+  padding: 32px 5%;
+}
+
+.foot {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+footer p {
+  color: #b8c3d3;
+  font-size: .82rem;
+}
+
+.footlinks {
+  display: flex;
+  gap: 18px;
+  font-size: .9rem;
+}
+
+.footlinks a:hover { color: #75aaff; }
+
+@media(max-width:850px) {
+  .navlinks { gap: 12px; }
+  .navlinks a:not(.btn) { display: none; }
+
+  .hero {
+    min-height: 540px;
+    background-position: 60% center;
+  }
+
+  .cards { grid-template-columns: repeat(2, 1fr); }
+
+  .story-grid, .visit-grid { grid-template-columns: 1fr; }
+
+  .story img { height: 350px; }
+
+  .reviews { grid-template-columns: 1fr; }
+
+  .head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media(max-width:560px) {
+  header { padding: 12px 4%; }
+
+  .brand { font-size: 1rem; }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand small {
+    font-size: .56rem;
+    letter-spacing: .1em;
+  }
+
+  .navlinks .btn {
+    padding: 10px 12px;
+    font-size: .78rem;
+  }
+
+  .hero-inner { padding: 65px 0; }
+
+  .hero p { font-size: 1rem; }
+
+  section { padding: 62px 5%; }
+
+  .cards { grid-template-columns: 1fr; }
+
+  .card img { height: 245px; }
+
+  .proof strong { font-size: 1.15rem; }
+
+  .proof span { font-size: .73rem; }
+
+  .footlinks { flex-wrap: wrap; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">SAN ANGELO, TEXAS · FAMILY OWNED · MADE TO ORDER</div>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">
+      <img
+        class="brand-logo"
+        src="https://img1.wsimg.com/isteam/ip/3c962446-c25c-47db-b4ce-c33e09623bbf/blob-b769988.png/:/rs=h:200,cg:true,m/qt=q:95"
+        alt="Sunset Jr. Burgers & Cheesesteaks"
+      >
+      <span>Sunset Jr.<small>Burgers & Cheesesteaks</small></span>
+    </a>
+
+    <nav class="navlinks">
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Find Us</a>
+      <a class="btn" href="https://sunsetjr.com/" target="_blank" rel="noopener">Order Online ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="eyebrow">Big flavor. Local roots.</div>
+    <h1>Good food.<br><span>No shortcuts.</span></h1>
+    <p>Juicy burgers, Texas cheesesteaks, crispy sides, and house sauces—made to order right here in San Angelo.</p>
+    <div class="actions">
+      <a class="btn" href="https://sunsetjr.com/" target="_blank" rel="noopener">Explore Ordering ↗</a>
+      <a class="btn ghost" href="#menu">Explore the Menu</a>
+    </div>
+  </div>
+</section>
+
+<div class="proof">
+  <div class="proof-inner">
+    <div><strong>4.8 ★</strong><span>287 Google reviews</span></div>
+    <div><strong>MADE TO ORDER</strong><span>Freshly prepared favorites</span></div>
+    <div><strong>LOCAL</strong><span>Family-owned in San Angelo</span></div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="inner">
+    <div class="head">
+      <div>
+        <div class="eyebrow">The good stuff</div>
+        <h2>Meet your next favorite.</h2>
+      </div>
+      <p>From a classic cheeseburger to a Texas cheesesteak with jalapeños, there’s something worth coming back for.</p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85" alt="Juicy cheeseburger with melted cheese and fresh toppings" loading="lazy">
+        <div class="card-body">
+          <span class="tag">House favorite</span>
+          <h3>Handmade Burgers</h3>
+          <p>Juicy burgers on toasted buns with your choice of fresh toppings and condiments.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85" alt="Crispy golden french fries" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Perfect on the side</span>
+          <h3>Fries & Tater Tots</h3>
+          <p>Golden fries, sidewinder fries, and crunchy tater tots to round out your meal.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1600688640154-9619e002df30?auto=format&fit=crop&w=900&q=85" alt="Toasted cheesesteak sandwich" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Texas style</span>
+          <h3>Texas Cheesesteak</h3>
+          <p>A hearty cheesesteak packed with savory flavor. Try it with jalapeños for a kick.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=900&q=85" alt="Toasted sandwich sliders" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Great for sharing</span>
+          <h3>Sliders</h3>
+          <p>Small sandwiches with big flavor—an easy pick for sharing or mixing things up.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=900&q=85" alt="Pita gyro sandwich with meat and vegetables" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Something different</span>
+          <h3>Gyros & More</h3>
+          <p>Explore more of the menu alongside the burgers and cheesesteaks.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1513558161293-cdac9c3ba9b9?auto=format&fit=crop&w=900&q=85" alt="Refreshing lemonade over ice" loading="lazy">
+        <div class="card-body">
+          <span class="tag">Cool it down</span>
+          <h3>Lemonade & Sweet Treats</h3>
+          <p>Pair your meal with fresh-style lemonade, house sauces, or funnel cake fries.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="note">Photos are illustrative examples of the food style, not verified photos of Sunset Jr.’s actual dishes. Menu items and availability may change.</p>
+    <p style="margin-top:22px">
+      <a class="btn" href="https://sunsetjr.com/" target="_blank" rel="noopener">View Official Menu ↗</a>
+    </p>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="inner story-grid">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=85" alt="Freshly prepared cheeseburger" loading="lazy">
+    <div>
+      <div class="eyebrow">Proudly local</div>
+      <h2>San Angelo, made with flavor.</h2>
+      <p>Sunset Jr. is a local, family-run spot known for burgers, flavorful cheesesteaks, tasty sides, and friendly service.</p>
+      <p>Stop in for a quick bite, pick up dinner, or find a new favorite from the menu.</p>
+      <a class="btn" href="tel:+13256172332">Call (325) 617-2332</a>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="inner">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Word around town</div>
+        <h2>Local love.</h2>
+      </div>
+      <p>Guests often mention the juicy burgers, flavorful cheesesteaks, house sauces, and friendly service.</p>
+    </div>
+
+    <div class="reviews">
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>“We shared the Texas Cheesesteak and sidewinder fries. Both were cooked to perfection.”</p>
+        <strong>Customer review</strong>
+        <small>Feedback shared online</small>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>Guests praise the juicy burgers, tasty fries, and variety of house sauces.</p>
+        <strong>Local favorites</strong>
+        <small>Common review themes</small>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <p>Friendly staff and fast service are also frequently mentioned by customers.</p>
+        <strong>Made to order</strong>
+        <small>Common review themes</small>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="inner visit-grid">
+    <div>
+      <div class="eyebrow">Come on by</div>
+      <h2>Find us in San Angelo.</h2>
+      <p>Visit for dine-in, check the official site for current ordering options, or give the restaurant a call.</p>
+
+      <div class="line">
+        <strong>Address</strong>
+        <span>502 N Van Buren St<br>San Angelo, TX 76901</span>
+      </div>
+
+      <div class="line">
+        <strong>Hours</strong>
+        <span>Listing shows 11 AM–8 PM on open days.<br><small>Hours can change; confirm before visiting.</small></span>
+      </div>
+
+      <div class="line">
+        <strong>Phone</strong>
+        <span><a href="tel:+13256172332">(325) 617-2332</a></span>
+      </div>
+
+      <p style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=502+N+Van+Buren+St%2C+San+Angelo%2C+TX+76901" target="_blank" rel="noopener">Get Directions ↗</a>
+        <a class="btn" href="https://sunsetjr.com/" target="_blank" rel="noopener">Official Website ↗</a>
+      </p>
+    </div>
+
+    <iframe class="map" title="Map to Sunset Jr. Burgers and Cheesesteaks" loading="lazy" src="https://maps.google.com/maps?q=502%20N%20Van%20Buren%20St%2C%20San%20Angelo%2C%20TX%2076901&z=14&output=embed"></iframe>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <a class="brand" href="#home">
+      <img
+        class="brand-logo"
+        src="https://img1.wsimg.com/isteam/ip/3c962446-c25c-47db-b4ce-c33e09623bbf/blob-b769988.png/:/rs=h:200,cg:true,m/qt=q:95"
+        alt="Sunset Jr. Burgers & Cheesesteaks"
+      >
+      <span>Sunset Jr.<small>Burgers & Cheesesteaks</small></span>
+    </a>
+
+    <p>© <span id="year"></span> Sunset Jr. · San Angelo, Texas</p>
+
+    <div class="footlinks">
+      <a href="#menu">Menu</a>
+      <a href="#visit">Visit</a>
+      <a href="https://sunsetjr.com/" target="_blank" rel="noopener">Official Site ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+```
